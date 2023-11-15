@@ -1,7 +1,7 @@
 import sys
 import pygame
-from math import *
 import tkinter.messagebox
+from math import *
 from pygame.locals import MOUSEBUTTONDOWN
 
 pygame.init()
@@ -104,3 +104,11 @@ class Omok:
                     tkinter.messagebox.showinfo("", "white win!")
 
                 sys.exit()
+
+            if pygame.key.get_pressed()[pygame.K_ESCAPE]:
+                pygame.init()
+                break
+
+        from game_select_screen import MainScreen
+
+        MainScreen()
