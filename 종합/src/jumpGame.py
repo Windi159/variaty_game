@@ -1,6 +1,7 @@
 import pygame
 import sys
 import random
+from pygame.locals import K_ESCAPE
 
 pygame.init()
 screen = pygame.display.set_mode((640, 200))
@@ -66,8 +67,6 @@ class Obstacle(pygame.sprite.Sprite):
             result = True
         return result
 
-playerGroup.add(Player(30, 30, black))
-
 
 class Game_start:
     pygame.init()
@@ -111,6 +110,8 @@ class Game_start:
     def game_start(self):
         pygame.init()
 
+        playerGroup.add(Player(30, 30, black))
+
         while True:
             self.clock.tick(60)
             self.t_tick += 1
@@ -152,3 +153,24 @@ class Game_start:
                 obstaclesGroup.draw(screen)
 
             pygame.display.update()
+
+            if pygame.key.get_pressed()[K_ESCAPE]:
+                for p in playerGroup:
+                    playerGroup.remove(p)
+
+                for o in obstaclesGroup:
+                    obstaclesGroup.remove(o)
+
+                self.game_over = False
+                self.score = 0
+                self.clock = pygame.time.Clock()
+                self.t_tick = -1
+                self.color = (0, 0, 0)
+                self.start = False
+
+                pygame.init()
+                break
+
+        from game_select_screen import MainScreen
+
+        MainScreen()
