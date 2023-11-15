@@ -1,9 +1,9 @@
-from src.tactical_yutnori import *
-from math import hypot
 import pygame
 import pygame.gfxdraw
-from pygame import Surface, Color, Rect
 import ctypes
+from src.tactical_yutnori import *
+from math import hypot
+from pygame import Surface, Color, Rect
 
 
 # 게임 설정을 담고 있는 클래스입니다.
