@@ -61,7 +61,7 @@ class Button:
 def select_game1_action():
     pygame.mixer.music.stop()
     pygame.init()
-    NumberYagu()
+    print("원탁아 그래픽은 언제 만들거니")
 
 def select_game2_action():
     pygame.mixer.music.stop()
@@ -77,7 +77,7 @@ def select_game3_action():
     pygame.display.set_mode((700, 700))
     pygame.display.set_caption("omok")
 
-    Omok.game_start()
+    Omok().game_start()
 
 def select_game4_action():
     pygame.mixer.music.stop()
@@ -113,12 +113,12 @@ class MainScreen:
 
         pygame.mixer.music.play(-1)
 
-        running = True
-
-        while running:
+        while True:
             for event in pygame.event.get():
                 if event.type == pygame.QUIT:
-                    running = False
+                    pygame.quit()
+                    sys.exit()
+
                 if event.type == pygame.MOUSEBUTTONDOWN:
                     if event.button == 1:
                         pos = pygame.mouse.get_pos()
@@ -135,7 +135,7 @@ class MainScreen:
                             pass
 
                         elif self.quit_button.is_clicked(pos):
-                            running = False
+                            pass
 
 
             self.play_game1_button.draw(screen, white)
