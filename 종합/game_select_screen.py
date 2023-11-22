@@ -61,7 +61,7 @@ class Button:
 def select_game1_action():
     pygame.mixer.music.stop()
     pygame.init()
-    print("원탁아 그래픽은 언제 만들거니")
+    NumberYagu()
 
 def select_game2_action():
     pygame.mixer.music.stop()
