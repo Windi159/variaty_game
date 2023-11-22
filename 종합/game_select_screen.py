@@ -145,3 +145,6 @@ class MainScreen:
             self.quit_button.draw(screen, white)
 
             pygame.display.update()
+
+if __name__ == "__main__":
+    MainScreen()
