@@ -94,7 +94,7 @@ class Game_start:
         screen.blit(over_text, (int(640 / 2 - over_text.get_width() / 2), int(200 / 3)))
 
         font = pygame.font.SysFont("헤드라인", 30)
-        over_text = font.render(f"please, space key..", True, (200, 200, 255))
+        over_text = font.render(f"please, R key..", True, (200, 200, 255))
         screen.blit(over_text, (int(640 / 2 - over_text.get_width() / 2), int(200 / 4 * 2)))
 
     def restart_game(self):
@@ -122,7 +122,7 @@ class Game_start:
                     sys.exit()
 
             key_event = pygame.key.get_pressed()
-            if key_event[pygame.K_SPACE] and self.game_over:
+            if key_event[pygame.K_r] and self.game_over:
                 self.restart_game()
 
             if self.game_over is True:
